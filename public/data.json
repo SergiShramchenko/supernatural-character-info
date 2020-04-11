@@ -4,41 +4,41 @@
       "name": "Wendigo",
       "id": 1,
       "info": "A creature that was once human but was transformed into an immortal evil spirit when it took up the practice of cannibalism. Wendigos are cursed to wander the land, eternally seeking to fulfill their voracious appetite for human flesh.",
-      "death-reason": "Shot with a flare gun",
+      "death_reason": "Shot with a flare gun",
       "killer": "Dean Winchester",
-      "murder weapon": "Gun"
+      "murder_weapon": "Gun"
     },
     {
       "name": "Poltergeist",
       "id": 2,
       "info": "A term used to describe a supposed spirit or ghost that manifests itself by moving and influencing inanimate objects. Reports of poltergeist activity typically feature heavily on raps, bumps, thumps, knocks, footsteps and bed-shaking, all without a discernible point of original or physical reason for occurrence. Many accounts also detail objects being thrown about the room, furniture being moved, and even people being levitated",
-      "death-reason": "Defeated by a stronger spirit",
+      "death_reason": "Defeated by a stronger spirit",
       "killer": "Mary Winchester",
-      "murder weapon": "Spirit"
+      "murder_weapon": "Spirit"
     },
     {
       "name": "Luther(Vampire)",
       "id": 3,
       "info": "Luther was the leader of a small group of vampires and the mate of female vampire Kate. Luther was apparently born in the 1800s, as Kate says that the Colt was made around when Luther was born. He has history with hunter Daniel Elkins who presumably killed Luther’s family",
-      "death-reason": "Shot with the Colt",
+      "death_reason": "Shot with the Colt",
       "killer": "John Winchester",
-      "murder weapon": "the Colt"
+      "murder_weapon": "the Colt"
     },
     {
       "name": "Djinn",
       "id": 4,
       "info": "Djinn are humanoid creatures with tattooed skin that prefer to live in large ruins with a lot of places to hide, and appear to mostly be solitary and hermit like in nature. Though family units of djinn appear to stick together. When djinn access their powers, their eyes will glow blue and their arms will be engulfed in a blue smokeless flame and their tattoos move and extend down their arms.They feed on human blood and can poison their victims with a touch. Their poison causes reality-altering hallucinations and can be used either to kill their victims quickly, or to leave victims in a coma-like state while the djinn feeds on their blood over a long period of time",
-      "death-reason": "Stabbed with a silver blade dipped in lambs blood",
+      "death_reason": "Stabbed with a silver blade dipped in lambs blood",
       "killer": "Dean Winchester",
-      "murder weapon": "Silver blade"
+      "murder_weapon": "Silver blade"
     },
     {
       "name": "Father Gil",
       "id": 5,
       "info": "Gil was a priest living in Elizabethville, Ohio. When the Devil's Gate in Wyoming was opened, he became possessed by one of the demons who had been meant to serve in Azazel's army. This demon was in a relationship with the demon who possessed Casey and had been lovers for centuries. He seemed to support Sam as the new leader of the demon army, but still goes to kill Dean when he finds that the latter has trapped Casey, and is killed by Sam with the Colt for it",
-      "death-reason": "Shot with the Colt",
+      "death_reason": "Shot with the Colt",
       "killer": "Sam Winchester",
-      "murder weapon": "the Colt"
+      "murder_weapon": "the Colt"
     },
     {
       "name": "Dixon",
@@ -46,39 +46,39 @@
       "info": "Dixon is a vampire whose nest including his daughter was killed by hunters. He picks up blonde girls at a nightclub and feeds them his blood, promising it is a fantastic new drug. When he captures Gordon, he decides to turn him into a vampire as revenge. He is devastated when Gordon kills the two women he was holding captive and making into vampires. While not shown, it can be assumed Dean kills him. Based on the photo of his daughter, he had been around since the late 19th century.",
       "death-reason": "Decapitated with a machete",
       "killer": "Dean Winchester",
-      "murder weapon": "Machete"
+      "murder_weapon": "Machete"
     },
     {
       "name": "Victor Henriksen",
       "id": 7,
       "info": "Victor Henriksen was an FBI Special Agent who was in charge of hunting down Sam and Dean. Henriksen managed to get the Winchesters into his custody on more than one occasion. Agent Henriksen eventually meets his demise at the hands of Lilith, after successfully defending a police station with the Winchesters against a horde of demons",
-      "death-reason": "He was close to Winchesters",
+      "death_reason": "He was close to Winchesters",
       "killer": "Lilith (Demon)",
-      "murder weapon": "Lilith supernatural powers"
+      "murder_weapon": "Lilith supernatural powers"
     },
     {
       "name": "Lucy/Dracula",
       "id": 8,
       "info": "A shapeshifter driven insane by its father's abuse and seeking the glamour of movies as opposed to the drabness of normal life. The shifter liked to pose as classic horror movie monsters including: Dracula, the Wolfman, and the Mummy",
-      "death-reason": "Shot in the heart with a silver bullet",
+      "death_reason": "Shot in the heart with a silver bullet",
       "killer": "Jamie",
-      "murder weapon": "Silver bullet"
+      "murder_weapon": "Silver bullet"
     },
     {
       "name": "Jack Montgomery",
       "id": 9,
       "info": "Jack Montgomery is a rugaru, a monstrous cannibal creature that can appear human for years before it turns. Jack's father was also a rugaru, killed by the hunter Travis in 1978. Jack's mother was pregnant with him at the time, and put him up for adoption, where Jack got lost in the system and Travis was unable to find him, though he admits to being somewhat unwilling, as Jack was only a child and had no idea about his true nature. In late September 2008, Jack begins noticing that he's changing: he has an insatiable hunger, which drives him to eat even raw meat; his bones are moving beneath his skin, he has difficulty controlling himself and he suddenly demonstrates superhuman strength",
-      "death-reason": "Flame thrower",
+      "death_reason": "Flame thrower",
       "killer": "Sam Winchester",
-      "murder weapon": "Flamethrower"
+      "murder_weapon": "Flamethrower"
     },
     {
       "name": "Sheriff Al Britton",
       "id": 10,
       "info": "Sheriff Britton is a personal friend of a recently deceased man, Frank O'Brien, whose death Sam and Dean are investigating. The sheriff uses alcohol sanitizing gel after shaking hands this the brothers. Later, he is afraid to see them when they begin investigating Luther Garland's death. He later attacks Dean in desperation, and dies of a heart attack brought on by Ghost Sickness. The sheriff was involved in the cover-up of Luther's death at Frank O'Brien's hands",
-      "death-reason": "Heart attack",
+      "death_reason": "Heart attack",
       "killer": "Luther Garland (Buruburu)",
-      "murder weapon": "infection"
+      "murder_weapon": "infection"
     }
   ]
 }

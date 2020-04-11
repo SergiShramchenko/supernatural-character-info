@@ -5,7 +5,7 @@ export const InfoTableContainer = styled.div`
   color: black;
 `;
 
-export const InfoTable = styled.table`
+export const InfoTableItem = styled.table`
   // border: solid 1px blue;
   width: 96.7rem;
   margin: 0 auto;

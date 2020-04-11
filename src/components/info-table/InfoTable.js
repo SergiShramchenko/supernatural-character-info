@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { fetchDataStart } from '../../redux/data/data.actions';
 
 import {
   InfoTableContainer,
-  InfoTable,
+  InfoTableItem,
   InfoTableHead,
   InfoTableDataCell,
   InfoTableRow,
@@ -10,33 +13,43 @@ import {
   InfoTableBody,
 } from './infoTable.style';
 
-export default () => (
-  <InfoTableContainer>
-    <InfoTable>
-      <InfoTableHead>
-        <InfoTableRow>
-          <InfoTableHeader>name</InfoTableHeader>
-          <InfoTableHeader>info</InfoTableHeader>
-          <InfoTableHeader>death-reason</InfoTableHeader>
-          <InfoTableHeader>killer</InfoTableHeader>
-          <InfoTableHeader>murder weapon</InfoTableHeader>
-        </InfoTableRow>
-      </InfoTableHead>
-      <InfoTableBody>
-        {[1, 2, 3, 4, 5].map((el, idx) => (
-          <InfoTableRow key={idx}>
-            <InfoTableDataCell>{'Wendigo'}</InfoTableDataCell>
-            <InfoTableDataCell>
-              {
-                'A creature that was once human A creature that was once human A creature that was once humanA creature that was once humanA creature that was once humanA creature that was once humanA creature that was once humanA creature that was once humanA creature that was once humanA creature that was once humanA creature that was once humanA creature that was once humanA creature that was once humanA creature that was once humanA creature that was once humanA creature that was once humanA creature '
-              }
-            </InfoTableDataCell>
-            <InfoTableDataCell>{'A creature that was once'}</InfoTableDataCell>
-            <InfoTableDataCell>{el}</InfoTableDataCell>
-            <InfoTableDataCell>{el}</InfoTableDataCell>
-          </InfoTableRow>
-        ))}
-      </InfoTableBody>
-    </InfoTable>
-  </InfoTableContainer>
-);
+class InfoTable extends Component {
+  async componentDidMount() {
+    await this.props.fetchDataStart();
+  }
+  render() {
+    return (
+      <InfoTableContainer>
+        <InfoTableItem>
+          <InfoTableHead>
+            <InfoTableRow>
+              <InfoTableHeader>name</InfoTableHeader>
+              <InfoTableHeader>info</InfoTableHeader>
+              <InfoTableHeader>death-reason</InfoTableHeader>
+              <InfoTableHeader>killer</InfoTableHeader>
+              <InfoTableHeader>murder weapon</InfoTableHeader>
+            </InfoTableRow>
+          </InfoTableHead>
+          <InfoTableBody>
+            {this.props.data.data.map((el) => (
+              <InfoTableRow key={el.id}>
+                <InfoTableDataCell>{el.name}</InfoTableDataCell>
+                <InfoTableDataCell>{el.info}</InfoTableDataCell>
+                <InfoTableDataCell>{el.death_reason}</InfoTableDataCell>
+                <InfoTableDataCell>{el.killer}</InfoTableDataCell>
+                <InfoTableDataCell>{el.murder_weapon}</InfoTableDataCell>
+              </InfoTableRow>
+            ))}
+          </InfoTableBody>
+        </InfoTableItem>
+      </InfoTableContainer>
+    );
+  }
+}
+const mapStateToProps = ({ data }) => ({ data });
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchDataStart: () => dispatch(fetchDataStart()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(InfoTable);
