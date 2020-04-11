@@ -13,6 +13,7 @@ export const InfoTable = styled.table`
   font-family: Tahoma, Geneva, Verdana, sans-serif;
   color: rgb(117, 117, 117);
   text-align: left;
+  margin-top: 6.3rem;
 `;
 
 export const InfoTableHead = styled.thead`

@@ -10,7 +10,7 @@ export const HeaderContainer = styled.ul`
 `;
 
 export const HeaderItem = styled.li`
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: #828282;
   opacity: 0.5;
   cursor: pointer;
