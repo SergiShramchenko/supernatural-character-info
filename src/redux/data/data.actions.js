@@ -53,6 +53,7 @@ export const addTableField = () => ({
   type: ADD_TABLE_FIELD,
 });
 
-export const addCartToTable = () => ({
+export const addCartToTable = (cart) => ({
   type: ADD_CART,
+  payload: cart,
 });

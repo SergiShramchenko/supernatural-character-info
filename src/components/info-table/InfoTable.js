@@ -23,7 +23,8 @@ import {
 
 class InfoTable extends Component {
   componentDidMount() {
-    this.props.fetchDataStart();
+    // eslint-disable-next-line no-unused-expressions
+    this.props.data.test === true ? this.props.fetchDataStart() : null;
   }
 
   sort = (field) => {

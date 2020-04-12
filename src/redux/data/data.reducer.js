@@ -16,7 +16,6 @@ const initialState = {
   error: false,
   data: [],
   searchValue: '',
-  searchResult: [],
   searchField: [
     'all',
     'name',
@@ -31,10 +30,10 @@ const initialState = {
   deleteField: false,
   addField: false,
   addCart: false,
+  test: true,
 };
 
 export default (state = initialState, action) => {
-  console.log(state);
   switch (action.type) {
     case FETCHING_DATA_START:
       return {
@@ -84,11 +83,15 @@ export default (state = initialState, action) => {
       return {
         ...state,
         addField: true,
+        addCart: false,
       };
     case ADD_CART:
       return {
         ...state,
         addCart: true,
+        addField: false,
+        test: false,
+        data: [...state.data, action.payload],
       };
     default:
       return state;
