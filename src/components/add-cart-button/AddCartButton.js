@@ -5,14 +5,10 @@ import { addCartToTable } from '../../redux/data/data.actions';
 
 import { AddCartButtonContainer } from './addCartButton.style';
 
-const AddCartButton = (props) => (
-  <AddCartButtonContainer onClick={() => props.addCartToTable(props.cart)}>
+const AddCartButton = ({ cart, addCartToTable }) => (
+  <AddCartButtonContainer onClick={() => addCartToTable(cart)}>
     Add cart
   </AddCartButtonContainer>
 );
 
-const mapDispatchToProps = (dispatch) => ({
-  addCartToTable: (cart) => dispatch(addCartToTable(cart)),
-});
-
-export default connect(null, mapDispatchToProps)(AddCartButton);
+export default connect(null, { addCartToTable })(AddCartButton);

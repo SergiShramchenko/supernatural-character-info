@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-// import CharacterCartInput from '../character-cart-input';
-// import CharacterCartInfoField from '../character-cart-info-field';
 import AddCartButton from '../add-cart-button';
 
 import {
@@ -20,7 +18,6 @@ class AddCharacterCart extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <AddCharacterCartContainer>
         <CharacterCartInputContainer

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const AddCharacterCartContainer = styled.div`
+export const AddCharacterCartContainer = styled.form`
   //   border: solid 2px blue;
   display: flex;
   flex-direction: column;

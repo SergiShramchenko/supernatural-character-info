@@ -24,16 +24,17 @@ const initialState = {
     'killer',
     'murder_weapon',
   ],
+  tableHeader: ['name', 'info', 'death_reason', 'killer', 'murder_weapon'],
   choosedSearchField: 'all',
   fieldNumber: 0,
   sortNumber: 0,
   deleteField: false,
   addField: false,
   addCart: false,
-  test: true,
 };
 
 export default (state = initialState, action) => {
+  console.log(action.type, state.loading);
   switch (action.type) {
     case FETCHING_DATA_START:
       return {
@@ -61,6 +62,7 @@ export default (state = initialState, action) => {
     case CHAGE_FIELD:
       return {
         ...state,
+        fieldNumber: state.fieldNumber === 5 ? 0 : state.fieldNumber + 1,
         choosedSearchField: action.payload,
       };
     case SORT_TABLE_FIELD:

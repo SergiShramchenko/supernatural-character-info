@@ -10,22 +10,22 @@ import {
   CharacterOperationIcon,
 } from './characterOperation.style';
 
-const CharacterOperation = (props) => (
+const CharacterOperation = ({ addTableField, deleteTableField }) => (
   <CharacterOperationContainer>
     <CharacterOption
       option={
         <CharacterOperationIcon
           className='fas fa-user-plus'
-          onClick={props.addTableField}
-        ></CharacterOperationIcon>
+          onClick={addTableField}
+        />
       }
     />
     <CharacterOption
       option={
         <CharacterOperationIcon
           className='fas fa-user-times'
-          onClick={props.deleteTableField}
-        ></CharacterOperationIcon>
+          onClick={deleteTableField}
+        />
       }
     />
   </CharacterOperationContainer>

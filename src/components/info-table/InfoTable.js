@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import _ from 'lodash';
-
 import search from '../../helper-functions/search';
+import sortField from '../../helper-functions/sortField';
+import deleteRow from '../../helper-functions/deleteRow';
 
 import {
   fetchDataStart,
@@ -24,69 +24,57 @@ import {
 class InfoTable extends Component {
   componentDidMount() {
     // eslint-disable-next-line no-unused-expressions
-    this.props.data.test === true ? this.props.fetchDataStart() : null;
+    !this.props.data.addCart === true ? this.props.fetchDataStart() : null;
   }
 
   sort = (field) => {
-    const data =
-      this.props.data.sortNumber % 2 !== 1
-        ? _.sortBy(this.props.data.data, field)
-        : _.sortBy(this.props.data.data, field).reverse();
-    this.props.sortTableField(data);
+    const { data, sortNumber } = this.props.data;
+    const { sortTableField } = this.props;
+    return sortField(data, field, sortNumber, sortTableField);
   };
 
   deleteRowFromTable = (rowId) => {
-    const idx = this.props.data.data.findIndex((el) => el.id === rowId);
-    // console.log(idx);
-    const newData = [
-      ...this.props.data.data.slice(0, idx),
-      ...this.props.data.data.slice(idx + 1),
-    ];
-    console.log(newData);
+    const { data, deleteField } = this.props.data;
+    const { deleteFieldFromTable } = this.props;
 
-    return this.props.data.deleteField
-      ? this.props.deleteFieldFromTable(newData)
-      : null;
+    return deleteRow(data, rowId, deleteField, deleteFieldFromTable);
   };
 
   render() {
-    const { data, searchValue, choosedSearchField } = this.props.data;
+    const {
+      data,
+      searchValue,
+      choosedSearchField,
+      tableHeader,
+    } = this.props.data;
 
     return (
       <InfoTableContainer>
         <InfoTableItem>
           <InfoTableHead>
             <InfoTableRow>
-              <InfoTableHeader onClick={() => this.sort('name')}>
-                name
-              </InfoTableHeader>
-              <InfoTableHeader onClick={() => this.sort('info')}>
-                info
-              </InfoTableHeader>
-              <InfoTableHeader onClick={() => this.sort('death_reason')}>
-                death-reason
-              </InfoTableHeader>
-              <InfoTableHeader onClick={() => this.sort('killer')}>
-                killer
-              </InfoTableHeader>
-              <InfoTableHeader onClick={() => this.sort('murder_weapon')}>
-                murder weapon
-              </InfoTableHeader>
+              {tableHeader.map((rowHead) => (
+                <InfoTableHeader onClick={() => this.sort(rowHead)}>
+                  {rowHead}
+                </InfoTableHeader>
+              ))}
             </InfoTableRow>
           </InfoTableHead>
           <InfoTableBody>
-            {search(data, choosedSearchField, searchValue).map((el) => (
-              <InfoTableRow
-                key={el.id}
-                onClick={() => this.deleteRowFromTable(el.id)}
-              >
-                <InfoTableDataCell>{el.name}</InfoTableDataCell>
-                <InfoTableDataCell>{el.info}</InfoTableDataCell>
-                <InfoTableDataCell>{el.death_reason}</InfoTableDataCell>
-                <InfoTableDataCell>{el.killer}</InfoTableDataCell>
-                <InfoTableDataCell>{el.murder_weapon}</InfoTableDataCell>
-              </InfoTableRow>
-            ))}
+            {search(data, choosedSearchField, searchValue).map(
+              ({ name, id, info, death_reason, killer, murder_weapon }) => (
+                <InfoTableRow
+                  key={id}
+                  onClick={() => this.deleteRowFromTable(id)}
+                >
+                  <InfoTableDataCell>{name}</InfoTableDataCell>
+                  <InfoTableDataCell>{info}</InfoTableDataCell>
+                  <InfoTableDataCell>{death_reason}</InfoTableDataCell>
+                  <InfoTableDataCell>{killer}</InfoTableDataCell>
+                  <InfoTableDataCell>{murder_weapon}</InfoTableDataCell>
+                </InfoTableRow>
+              )
+            )}
           </InfoTableBody>
         </InfoTableItem>
       </InfoTableContainer>
