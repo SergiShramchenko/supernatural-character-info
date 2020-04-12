@@ -3,7 +3,12 @@ import {
   FETCHING_DATA_SUCCESS,
   FETCHING_DATA_FAIL,
   GET_SEARCH_VALUE,
-  GET_SEARCH_RESULT,
+  CHAGE_FIELD,
+  SORT_TABLE_FIELD,
+  DELETE_TABLE_FIELD,
+  DELETE_FIELD_FROM_TABLE,
+  ADD_TABLE_FIELD,
+  ADD_CART,
 } from './data.types';
 
 const initialState = {
@@ -12,6 +17,20 @@ const initialState = {
   data: [],
   searchValue: '',
   searchResult: [],
+  searchField: [
+    'all',
+    'name',
+    'info',
+    'death_reason',
+    'killer',
+    'murder_weapon',
+  ],
+  choosedSearchField: 'all',
+  fieldNumber: 0,
+  sortNumber: 0,
+  deleteField: false,
+  addField: false,
+  addCart: false,
 };
 
 export default (state = initialState, action) => {
@@ -40,13 +59,37 @@ export default (state = initialState, action) => {
         ...state,
         searchValue: action.payload,
       };
-
-    case GET_SEARCH_RESULT:
+    case CHAGE_FIELD:
+      return {
+        ...state,
+        choosedSearchField: action.payload,
+      };
+    case SORT_TABLE_FIELD:
+      return {
+        ...state,
+        data: action.payload,
+        sortNumber: state.sortNumber + 1,
+      };
+    case DELETE_TABLE_FIELD:
+      return {
+        ...state,
+        deleteField: state.deleteField ? false : true,
+      };
+    case DELETE_FIELD_FROM_TABLE:
       return {
         ...state,
         data: action.payload,
       };
-
+    case ADD_TABLE_FIELD:
+      return {
+        ...state,
+        addField: true,
+      };
+    case ADD_CART:
+      return {
+        ...state,
+        addCart: true,
+      };
     default:
       return state;
   }

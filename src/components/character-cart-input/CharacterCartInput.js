@@ -2,4 +2,4 @@ import React from 'react';
 
 import { CharacterCartInputContainer } from './characterCartInput.style';
 
-export default () => <CharacterCartInputContainer />;
+export default () => <CharacterCartInputContainer placeholder='cart' />;

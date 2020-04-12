@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { getSearchValue, getSearchResult } from '../../redux/data/data.actions';
+import { getSearchValue } from '../../redux/data/data.actions';
 
 import { SearchInputContainer } from './searchInput.style';
 
@@ -11,14 +11,9 @@ class SearchInput extends Component {
   };
 
   handleChangeValue = (e) => {
-    this.setState({ searchName: e.target.value });
-    this.props.getSearchValue(e.target.value);
-
-    let data = this.props.data.data.filter((el) =>
-      el.name.toLowerCase().includes(this.props.data.searchValue.toLowerCase())
-    );
-
-    this.props.getSearchResult(data);
+    const { value } = e.target;
+    this.setState({ searchName: value });
+    this.props.getSearchValue(value);
   };
 
   render() {
@@ -36,7 +31,6 @@ const mapStateToProps = ({ data }) => ({ data });
 
 const mapDispatchToProps = (dispatch) => ({
   getSearchValue: (searchValue) => dispatch(getSearchValue(searchValue)),
-  getSearchResult: (data) => dispatch(getSearchResult(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchInput);

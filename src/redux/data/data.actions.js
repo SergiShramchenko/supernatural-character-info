@@ -3,7 +3,12 @@ import {
   FETCHING_DATA_SUCCESS,
   FETCHING_DATA_FAIL,
   GET_SEARCH_VALUE,
-  GET_SEARCH_RESULT,
+  CHAGE_FIELD,
+  SORT_TABLE_FIELD,
+  DELETE_TABLE_FIELD,
+  DELETE_FIELD_FROM_TABLE,
+  ADD_TABLE_FIELD,
+  ADD_CART,
 } from './data.types';
 
 export const fetchDataStart = () => ({
@@ -25,7 +30,29 @@ export const getSearchValue = (searchValue) => ({
   payload: searchValue,
 });
 
-export const getSearchResult = (data) => ({
-  type: GET_SEARCH_RESULT,
-  payload: data,
+export const changeField = (field) => ({
+  type: CHAGE_FIELD,
+  payload: field,
+});
+
+export const sortTableField = (table) => ({
+  type: SORT_TABLE_FIELD,
+  payload: table,
+});
+
+export const deleteTableField = () => ({
+  type: DELETE_TABLE_FIELD,
+});
+
+export const deleteFieldFromTable = (table) => ({
+  type: DELETE_FIELD_FROM_TABLE,
+  payload: table,
+});
+
+export const addTableField = () => ({
+  type: ADD_TABLE_FIELD,
+});
+
+export const addCartToTable = () => ({
+  type: ADD_CART,
 });
