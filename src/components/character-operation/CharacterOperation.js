@@ -10,7 +10,11 @@ import {
   CharacterOperationIcon,
 } from './characterOperation.style';
 
-const CharacterOperation = ({ addTableField, deleteTableField }) => (
+const CharacterOperation = ({
+  data: { deleteField },
+  addTableField,
+  deleteTableField,
+}) => (
   <CharacterOperationContainer>
     <CharacterOption
       option={
@@ -25,15 +29,18 @@ const CharacterOperation = ({ addTableField, deleteTableField }) => (
         <CharacterOperationIcon
           className='fas fa-user-times'
           onClick={deleteTableField}
+          delete={deleteField}
         />
       }
     />
   </CharacterOperationContainer>
 );
 
+const mapStateToProps = ({ data }) => ({ data });
+
 const mapDispatchToProps = (dispatch) => ({
   deleteTableField: () => dispatch(deleteTableField()),
   addTableField: () => dispatch(addTableField()),
 });
 
-export default connect(null, mapDispatchToProps)(CharacterOperation);
+export default connect(mapStateToProps, mapDispatchToProps)(CharacterOperation);

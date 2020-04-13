@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import AddCartButton from '../add-cart-button';
 
@@ -15,11 +16,14 @@ class AddCharacterCart extends Component {
     death_reason: '',
     killer: '',
     murder_weapon: '',
+    id: null,
   };
 
   render() {
     return (
-      <AddCharacterCartContainer>
+      <AddCharacterCartContainer
+        onClick={() => this.setState({ id: this.props.data.data.length + 1 })}
+      >
         <CharacterCartInputContainer
           onChange={(e) => this.setState({ name: e.target.value })}
         />
@@ -41,4 +45,6 @@ class AddCharacterCart extends Component {
   }
 }
 
-export default AddCharacterCart;
+const mapStateToProps = ({ data }) => ({ data });
+
+export default connect(mapStateToProps)(AddCharacterCart);

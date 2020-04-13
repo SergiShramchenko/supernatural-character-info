@@ -34,7 +34,6 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-  console.log(action.type, state.loading);
   switch (action.type) {
     case FETCHING_DATA_START:
       return {
@@ -62,7 +61,6 @@ export default (state = initialState, action) => {
     case CHAGE_FIELD:
       return {
         ...state,
-        fieldNumber: state.fieldNumber === 5 ? 0 : state.fieldNumber + 1,
         choosedSearchField: action.payload,
       };
     case SORT_TABLE_FIELD:
@@ -74,7 +72,7 @@ export default (state = initialState, action) => {
     case DELETE_TABLE_FIELD:
       return {
         ...state,
-        deleteField: state.deleteField ? false : true,
+        deleteField: !state.deleteField,
       };
     case DELETE_FIELD_FROM_TABLE:
       return {

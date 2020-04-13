@@ -53,8 +53,8 @@ class InfoTable extends Component {
         <InfoTableItem>
           <InfoTableHead>
             <InfoTableRow>
-              {tableHeader.map((rowHead) => (
-                <InfoTableHeader onClick={() => this.sort(rowHead)}>
+              {tableHeader.map((rowHead, idx) => (
+                <InfoTableHeader key={idx} onClick={() => this.sort(rowHead)}>
                   {rowHead}
                 </InfoTableHeader>
               ))}
