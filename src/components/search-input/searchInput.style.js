@@ -10,6 +10,5 @@ export const SearchInputContainer = styled.input`
   text-indent: 2.3rem;
   font-size: 1.2rem;
   margin-left: 14.6rem;
-  // border: solid 2px blue;
   color: white;
 `;

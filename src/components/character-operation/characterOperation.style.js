@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 
 export const CharacterOperationContainer = styled.div`
-  // border: solid 2px yellow;
   display: flex;
   align-items: center;
   width: 11.3rem;
@@ -22,8 +21,8 @@ export const CharacterOperationIcon = styled.i`
   font-size: 20px;
   color: #262f34;
   cursor: pointer;
-
   ${del}
+
   &:hover {
     color: #767b7e;
   }

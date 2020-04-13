@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const AddCharacterCartContainer = styled.form`
-  //   border: solid 2px blue;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,7 +9,6 @@ export const AddCharacterCartContainer = styled.form`
 
 export const CharacterCartInputContainer = styled.input`
   width: 41.9rem;
-  //   border: solid 2px tomato;
   margin-top: 8.9rem;
   border: none;
   outline: none;

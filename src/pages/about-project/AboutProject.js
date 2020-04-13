@@ -1,3 +1,7 @@
 import React from 'react';
 
-export default () => <h1>About Project</h1>;
+import { AboutProjectContainer } from './aboutProject.style';
+
+export default () => (
+  <AboutProjectContainer>About Project</AboutProjectContainer>
+);

@@ -12,7 +12,6 @@ export const PosterContainer = styled.div`
 
 export const PosterInfo = styled.div`
   width: 29.6rem;
-  // border: solid 2px blue;
 `;
 
 export const PosterImg = styled.div``;
